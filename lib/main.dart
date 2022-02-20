@@ -1,5 +1,7 @@
+import 'package:cend/application.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  // runApp();
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const Application());
 }
