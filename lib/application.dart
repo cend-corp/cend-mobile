@@ -1,17 +1,18 @@
-import 'package:cend/chats/ui/chats_page.dart';
-import 'package:cend/profile/ui/profile_page.dart';
-import 'package:cend/settings/data/app_settings_repo_impl.dart';
-import 'package:cend/settings/data/constants.dart';
-import 'package:cend/settings/domain/app_settings_cubit.dart';
-import 'package:cend/settings/domain/app_settings_state.dart';
-import 'package:cend/settings/ui/settings_page.dart';
-import 'package:cend/tweats/ui/tweats_page.dart';
-import 'package:cend/widgets/organisms/app_bar.dart';
-import 'package:cend/widgets/organisms/bottom_nav_bar.dart';
+import 'package:cend/cend/chats/ui/chats_page.dart';
+import 'package:cend/cend/profile/ui/profile_page.dart';
+import 'package:cend/cend/security/data/auth_repo_impl.dart';
+import 'package:cend/cend/security/domain/auth_cubit.dart';
+import 'package:cend/cend/security/ui/auth_page.dart';
+import 'package:cend/cend/settings/data/app_settings_repo_impl.dart';
+import 'package:cend/cend/settings/data/constants.dart';
+import 'package:cend/cend/settings/domain/app_settings_cubit.dart';
+import 'package:cend/cend/settings/domain/app_settings_state.dart';
+import 'package:cend/cend/settings/ui/settings_page.dart';
+import 'package:cend/cend/tweats/ui/tweats_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class Application extends StatefulWidget {
@@ -33,8 +34,12 @@ class _ApplicationState extends State<Application> {
     return MultiBlocProvider(
       providers: [
         BlocProvider<AppSettingsCubit>(
+            lazy: false,
             create: (BuildContext context) =>
                 AppSettingsCubit(AppSettingsRepoImpl(storage))..loadProps()),
+        BlocProvider<AuthCubit>(
+          create: (BuildContext context) => AuthCubit(AuthRepoImpl(storage)),
+        )
       ],
       child: BlocBuilder<AppSettingsCubit, AppSettingsState>(
         builder: (context, state) {
@@ -49,19 +54,23 @@ class _ApplicationState extends State<Application> {
               GlobalWidgetsLocalizations.delegate
             ],
             debugShowCheckedModeBanner: false,
-            themeMode: settings.themeMode,
+            // themeMode: settings.themeMode,
+            themeMode: ThemeMode.dark,
             locale: settings.locale,
             darkTheme: AppSettingsConstants.darkTheme,
             theme: AppSettingsConstants.lightTheme,
             supportedLocales: AppSettingsConstants.supportedLocales,
-            home: Scaffold(
-              appBar: const CendAppBar(),
-              body: currentPage,
-              bottomNavigationBar: CendNavBar(
-                onTap: _onTap,
-                selectedIndex: _selectedIndex,
-              ),
+            home: const Scaffold(
+              body: AuthPage(),
             ),
+            // home: Scaffold(
+            //   appBar: const CendAppBar(),
+            //   body: currentPage,
+            //   bottomNavigationBar: CendNavBar(
+            //     onTap: _onTap,
+            //     selectedIndex: _selectedIndex,
+            //   ),
+            // ),
           );
         },
       ),

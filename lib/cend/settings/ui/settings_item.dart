@@ -1,4 +1,4 @@
-import 'package:cend/widgets/atoms/left_row.dart';
+import 'package:cend/cend/widgets/atoms/left_row.dart';
 import 'package:flutter/material.dart';
 
 class SettingsItem extends StatelessWidget {

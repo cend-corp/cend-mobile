@@ -1,4 +1,4 @@
-import 'package:cend/settings/ui/settings_item.dart';
+import 'package:cend/cend/settings/ui/settings_item.dart';
 import 'package:flutter/material.dart';
 
 class SettingsList extends StatelessWidget {

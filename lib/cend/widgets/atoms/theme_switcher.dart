@@ -1,6 +1,6 @@
-import 'package:cend/settings/domain/app_settings_cubit.dart';
-import 'package:cend/settings/domain/app_settings_state.dart';
-import 'package:cend/widgets/atoms/switch_with_icon.dart';
+import 'package:cend/cend/settings/domain/app_settings_cubit.dart';
+import 'package:cend/cend/settings/domain/app_settings_state.dart';
+import 'package:cend/cend/widgets/atoms/switch_with_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:cend/settings/data/app_settings_repo.dart';
-import 'package:cend/settings/data/constants.dart';
-import 'package:cend/settings/domain/app_settings.dart';
+import 'package:cend/cend/settings/data/app_settings_repo.dart';
+import 'package:cend/cend/settings/data/constants.dart';
+import 'package:cend/cend/settings/domain/app_settings.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class AppSettingsRepoImpl extends AppSettingsRepo {

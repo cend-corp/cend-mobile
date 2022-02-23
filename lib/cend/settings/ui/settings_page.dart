@@ -1,8 +1,8 @@
-import 'package:cend/settings/ui/settings_item.dart';
-import 'package:cend/settings/ui/settings_list.dart';
-import 'package:cend/widgets/atoms/language_switcher.dart';
-import 'package:cend/widgets/atoms/theme_switcher.dart';
-import 'package:cend/widgets/organisms/stack_with_logout_button.dart';
+import 'package:cend/cend/settings/ui/settings_item.dart';
+import 'package:cend/cend/settings/ui/settings_list.dart';
+import 'package:cend/cend/widgets/atoms/language_switcher.dart';
+import 'package:cend/cend/widgets/atoms/theme_switcher.dart';
+import 'package:cend/cend/widgets/organisms/stack_with_logout_button.dart';
 import 'package:flutter/material.dart';
 
 class SettingsPage extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:cend/widgets/atoms/logout_button.dart';
+import 'package:cend/cend/widgets/atoms/logout_button.dart';
 import 'package:flutter/material.dart';
 
 class StackWithLogoutButton extends StatelessWidget {

@@ -10,10 +10,10 @@ dependencies:
   local_auth: ^1.1.10
   flutter_secure_storage: ^5.0.2
 
-  flash: ^2.0.3+2
   getwidget: ^2.0.4
 
   retrofit: ^3.0.1
+  dio: ^4.0.4
   json_annotation: ^4.4.0
   equatable: ^2.0.3
 
@@ -44,3 +44,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/logo.jpeg
+    - assets/images/cend300x300.png

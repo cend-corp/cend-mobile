@@ -1,7 +1,7 @@
-import 'package:cend/settings/data/app_settings_repo.dart';
-import 'package:cend/settings/data/constants.dart';
-import 'package:cend/settings/domain/app_settings.dart';
-import 'package:cend/settings/domain/app_settings_state.dart';
+import 'package:cend/cend/settings/data/app_settings_repo.dart';
+import 'package:cend/cend/settings/data/constants.dart';
+import 'package:cend/cend/settings/domain/app_settings.dart';
+import 'package:cend/cend/settings/domain/app_settings_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,4 +1,4 @@
-import 'package:cend/settings/domain/app_settings.dart';
+import 'package:cend/cend/settings/domain/app_settings.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class AppSettingsState extends Equatable{}
